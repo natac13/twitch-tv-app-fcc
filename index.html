@@ -14,8 +14,15 @@
 </head>
 <body ng-app="Twitty">
 
-<div ng-controller="StreamController as streamCtrl">
-<p>{{ test }}</p>
+<div ng-controller="StreamController">
+<ul>
+  <li ng-repeat="user in users" ng-show="user.account">
+    <p>User: {{ user.displayName }}</p>
+    <p>Bio: {{  user.bio }}</p>
+    <a href="{{ user.url }}">Link to video!</a>
+    <img ng-src="{{ user.logo }}" alt="User Logo">
+  </li>
+</ul>
 
 </div>
 
