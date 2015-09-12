@@ -1,13 +1,24 @@
+#status {
+    font-size: 5em;
+}
 .navbar-inverse {
-    background: green;
+    background: blue;
 }
 
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:focus,
 .navbar-inverse .navbar-nav>.active>a:hover {
-    background: lightgreen;
+    background: lightblue;
 }
 
-.test {
-    background: black;
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+#separator {
+    margin: 5em 0;
 }
