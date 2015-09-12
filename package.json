@@ -4,11 +4,13 @@
   "description": "The is a challenge on Free Code Camp to use the Twitch API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "babel js/src -s --out-dir js/dist",
+    "watch": "babel js/src -s -w --out-dir js/dist"
   },
   "author": "Sean Campbell",
   "license": "MIT",
   "dependencies": {
-    "angular": "^1.4.5"
+    "angular": "^1.4.5",
+    "jquery": "^2.1.4"
   }
 }
