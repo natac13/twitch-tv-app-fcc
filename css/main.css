@@ -1,0 +1,13 @@
+.navbar-inverse {
+    background: green;
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover {
+    background: lightgreen;
+}
+
+.test {
+    background: black;
+}
