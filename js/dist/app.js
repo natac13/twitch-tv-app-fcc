@@ -8,6 +8,39 @@
 
         $scope.test = 'test string';
         $scope.users = [];
+        $scope.online = [];
+        $scope.offline = [];
+        /**
+         * I wanted to use two controllers but was not able to figure out how to share
+         * the filter object properly
+         */
+
+        // this will filter out the online or offline users during .activate()
+        $scope.filter = {};
+        $scope.navItems = [{
+            name: 'all',
+            active: true
+        }, {
+            name: 'online',
+            active: false
+        }, {
+            name: 'offline',
+            active: false
+        }];
+
+        $scope.activate = function (index) {
+            angular.forEach($scope.navItems, function (obj) {
+                obj.active = false;
+            });
+            $scope.navItems[index].active = true;
+            if ($scope.navItems[index].name === 'online') {
+                $scope.filter = { status: true };
+            } else if ($scope.navItems[index].name === 'offline') {
+                $scope.filter = { status: false };
+            } else {
+                $scope.filter = {};
+            }
+        };
 
         streams.forEach(function (stream) {
             // build a user object for each streamer
@@ -34,7 +67,16 @@
                 user.logo = response.data.logo;
             });
             $scope.users.push(user);
+            user.status ? $scope.online.push(user) : $scope.offline.push(user);
         });
     }]);
+
+    // $(document).ready(function() {
+    //     $('#filters').on('click', 'a', function (e) {
+    //         e.preventDefault();
+    //         $(this).closest('#filters').find('.active').removeClass('active');
+    //         $(this).parent().addClass('active');
+    //     });
+    // });
 })();
 //# sourceMappingURL=app.js.map
