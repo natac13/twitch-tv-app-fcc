@@ -1,24 +1,74 @@
+/*
+first - #E0FFFB
+second - #29CDB5
+third - #008698
+4th - #F39C9C
+font - 400/700
+
+ */
+
+body {
+    background: #E0FFFB;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navbar-inverse .navbar-brand {
+    font-size: 2em;
+    color: #E0FFFB;
+}
+
+#filters {
+    font-size: 1em;
+    color: #A8BFBC;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #A8BFBC;
+}
+
 #status {
-    font-size: 5em;
+    font-size: 1.5em;
+    color: #008698;
 }
 .navbar-inverse {
-    background: blue;
+    background: #008698;
 }
 
 .navbar-inverse .navbar-nav>.active>a,
 .navbar-inverse .navbar-nav>.active>a:focus,
 .navbar-inverse .navbar-nav>.active>a:hover {
-    background: lightblue;
+    background: #00CBE6;
+    font-size: 1.25em;
 }
 
 .green {
-    color: green;
+    color: #29CDB5;
 }
 
 .red {
-    color: red;
+    color: #F39C9C;
 }
 
 #separator {
     margin: 5em 0;
+}
+
+#default {
+    font-size: 6em;
+    color: #008698;
+}
+
+h2 {
+    font-size: 2.8em;
+    color: #F39C9C;
+    border-bottom: 2px dashed #F39C9C;
+}
+
+#bio {
+    font-size: 1.3em;
+}
+
+#bio:first-line {
+    font-size: 1.5em;
+    font-style: italic;
 }

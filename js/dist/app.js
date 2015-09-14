@@ -63,7 +63,7 @@
 
             $http.get(twitchUrl + 'users/' + stream).then(function (response) {
                 user.displayName = response.data.display_name;
-                user.bio = response.data.bio;
+                user.bio = response.data.bio || 'This user has no bio, sorry';
                 user.logo = response.data.logo;
             });
             $scope.users.push(user);

@@ -71,7 +71,7 @@
             $http.get(twitchUrl + 'users/' + stream)
             .then((response) =>{
                 user.displayName = response.data.display_name;
-                user.bio = response.data.bio;
+                user.bio = response.data.bio || 'This user has no bio, sorry';
                 user.logo = response.data.logo;
 
             });
