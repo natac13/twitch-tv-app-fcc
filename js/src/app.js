@@ -59,6 +59,8 @@
                 if(response.data.stream) {
                     // online
                     user.status = true;
+                    console.log(response.data.stream.game);
+                    user.game = response.data.stream.game;
                 } else {
                     user.status = false;
                 }
@@ -75,6 +77,8 @@
                 user.logo = response.data.logo;
 
             });
+
+            $http.get('../userEX.json').then((response) => console.log(response.data));
             $scope.users.push(user);
             user.status ? $scope.online.push(user) :
                 $scope.offline.push(user);

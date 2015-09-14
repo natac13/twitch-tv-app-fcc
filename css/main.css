@@ -26,10 +26,11 @@ body {
     color: #A8BFBC;
 }
 
-#status {
-    font-size: 1.5em;
-    color: #008698;
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>li>a:focus {
+    cursor: cell;
 }
+
 .navbar-inverse {
     background: #008698;
 }
@@ -49,26 +50,74 @@ body {
     color: #994545;
 }
 
+#status>p {
+    font-size: 1.5em;
+    color: #008698;
+}
+
+#status:hover, #status:focus {
+    text-decoration: none;
+}
+
+
+
+#status .fa-tv {
+    font-size: 2em;
+}
+
 #separator {
     margin: 5em 0;
 }
 
 #default {
-    font-size: 6em;
+    font-size: 8em;
     color: #008698;
 }
 
 h2 {
     font-size: 2.8em;
     color: #994545;
-    border-bottom: 2px dashed #994545;
+    border-bottom: 4px solid #994545;
+    cursor: crosshair;
+}
+
+.img-rounded:hover,
+.img-rounded:focus {
+    cursor: w-resize;
 }
 
 #bio {
-    font-size: 1.3em;
+    font-size: 1.2em;
+    cursor: alias;
 }
 
-#bio:first-line {
-    font-size: 1.5em;
+#bio:first-line, #game {
+    font-size: 1.4em;
     font-style: italic;
+}
+
+#author {
+  font-size: 1.5em;
+  color: #008698;
+}
+
+#ohNo {
+    display: block;
+    background-color: #f7f7f7;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#BEEED8), to(#9BB5A6));
+    background-image: -webkit-linear-gradient(top, #BEEED8, #9BB5A6);
+    background-image: -moz-linear-gradient(top, #BEEED8, #9BB5A6);
+    background-image: -ms-linear-gradient(top, #BEEED8, #9BB5A6);
+    background-image: -o-linear-gradient(top, #BEEED8, #9BB5A6);
+    color: #3C0052;
+    margin: 1em;
+    width: 10em;
+    height: 4em;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+    cursor: help;
+
 }

@@ -10,9 +10,12 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <!-- Required js files to load -->
-  <script src="node_modules/angular/angular.js"></script>
-  <script src="js/jquery.min.js"></script>
+  <!-- CDN from Google -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <!-- main js file -->
   <script src="js/dist/app.js"></script>
 </head>
 <body ng-app="Twitty">
@@ -30,7 +33,7 @@
         </button>
         <a class="navbar-brand" href="http://seancampbellnatac.com"
           target="_blank">
-          Natac's Twitch Tv App
+          Natac's Clicky Twitch Tv App
         </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
@@ -41,9 +44,6 @@
               {{item.name | uppercase}} Users
             </a>
           </li>
-        <!--   <li class="active"><a href="#" role="button">All Users</a></li>
-          <li><a href="#" role="button">Online Users</a></li>
-          <li><a href="#" role="button">Offline Users</a></li> -->
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -56,26 +56,26 @@
         <li class="row" ng-repeat="user in users | filter:filter"
           ng-show="user.account">
           <div class="col-xs-3"
-            ng-class-odd="{'col-xs-push-8' : $index % 2 === 0}">
-            <a href="{{ user.url }}" target="_blank">
-              <p id="status"><i class="fa fa-tv"></i>
-                {{ user.status ? 'Streaming now!' : 'Not Streaming...'}}</p>
+            ng-class-odd="'col-xs-push-8'">
+
             <img ng-src="{{ user.logo }}" alt="User Logo" ng-show="user.logo"
               class="img-responsive img-rounded" width="200px" height="200px">
-              <i class="fa fa-twitch" ng-hide="user.logo" id="default"></i>
-            </a>
+            <button class="btn btn-default" ng-show="user.logo" id="ohNo">
+                Please Do Not Click
+            </button>
+            <i class="fa fa-twitch" ng-hide="user.logo" id="default"></i>
           </div>
           <div class="col-xs-5 col-xs-offset-3"
-            ng-class-odd="{'col-xs-pull-6' : $index % 2 === 0}">
+            ng-class-odd="'col-xs-pull-6'">
             <h2>{{ user.displayName | uppercase}}</h2>
+            <a href="{{ user.url }}" target="_blank" id="status">
+              <p><i class="fa fa-tv"></i>
+                {{ user.status ? 'Streaming now!' : 'Not Streaming...'}}</p>
+            </a>
+            <p id="game" ng-show="user.status">Currently Playing...
+{{user.game | uppercase}}</p>
             <p id="bio">{{ user.bio }}</p>
           </div>
-          <!-- <div class="col-xs-4 center-block"
-            ng-class-odd="{'col-xs-pull-8' : $index % 2 === 0}">
-            <img ng-src="{{ user.logo }}" alt="User Logo" ng-show="user.logo"
-              class="img-responsive img-rounded" width="200px" height="200px">
-              <i class="fa fa-twitch" ng-hide="user.logo" id="default"></i>
-          </div> -->
           <hr id="separator" class="col-xs-12">
         </li>
       </ul>
@@ -99,6 +99,7 @@
 
   </div> <!-- end wrapper -->
   <!-- Other js file -->
+  <script src="js/dist/effects.js"></script>
   <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
