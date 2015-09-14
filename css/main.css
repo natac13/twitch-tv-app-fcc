@@ -65,8 +65,9 @@ body {
     font-size: 2em;
 }
 
-#separator {
-    margin: 5em 0;
+main li {
+    border-bottom: 1px solid #994545;
+    margin-bottom: 2em;
 }
 
 #default {
@@ -91,7 +92,7 @@ h2 {
     cursor: alias;
 }
 
-#bio:first-line, #game {
+#bio::first-line, #game {
     font-size: 1.4em;
     font-style: italic;
 }

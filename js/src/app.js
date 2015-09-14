@@ -78,7 +78,6 @@
 
             });
 
-            $http.get('../userEX.json').then((response) => console.log(response.data));
             $scope.users.push(user);
             user.status ? $scope.online.push(user) :
                 $scope.offline.push(user);

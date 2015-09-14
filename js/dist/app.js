@@ -69,9 +69,6 @@
                 user.logo = response.data.logo;
             });
 
-            $http.get('js/userEX.json').then(function (response) {
-                return console.log(response.data);
-            });
             $scope.users.push(user);
             user.status ? $scope.online.push(user) : $scope.offline.push(user);
         });
